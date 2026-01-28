@@ -1,0 +1,102 @@
+Prompt:
+
+Build a stunning, modern, and highly interactive personal portfolio website using the following tech stack:
+React.js, Next.js, TypeScript, Barba.js, Three.js, Node.js, and MySQL.
+
+The website must have a bold rave-inspired aesthetic with neon colors, dark backgrounds, smooth animations, and immersive visuals. The overall design should feel futuristic, creative, and premium, while remaining clean and professional.
+
+Website Structure & Pages
+
+Implement a fully functional, responsive website with the following sections and pages:
+
+1. Global Layout
+
+A cohesive header/navigation bar with smooth page transitions (using Barba.js)
+
+A visually rich footer containing social links, copyright info, and quick navigation
+
+2. Landing Page (Home)
+
+Full-screen hero section with animated text and visuals
+
+Three.js background or interactive 3D elements
+
+Clear call-to-action buttons (View Projects, Contact Me)
+
+3. About Page
+
+Personal introduction
+
+Short bio with animated reveal effects
+
+Visual timeline or creative layout
+
+4. Experience Page
+
+Professional experience displayed using cards or timeline
+
+Smooth hover effects and transitions
+
+5. Skills Page
+
+Categorized skills (Frontend, Backend, Tools, Databases)
+
+Animated progress bars or interactive visual indicators
+
+6. Projects Page
+
+Grid-based project showcase
+
+Each project card should include title, description, tech stack, and links
+
+Optional project detail pages
+
+7. Education Page
+
+Academic background displayed visually
+
+Timeline or card-based layout
+
+8. Contact Page
+
+Contact form connected to a Node.js backend
+
+Store form submissions in a MySQL database
+
+Include social media links and email
+
+Technical Requirements
+
+Use Next.js for routing and performance optimization
+
+Write all components in TypeScript
+
+Use Barba.js for smooth page transitions
+
+Use Three.js for creative 3D or animated background effects
+
+Backend built with Node.js
+
+Database integration using MySQL
+
+Fully responsive design for mobile, tablet, and desktop
+
+Design & UX Guidelines
+
+Rave color palette (neon purples, blues, pinks, cyans)
+
+Dark-mode-first design
+
+Smooth animations, micro-interactions, and hover effects
+
+Consistent typography and spacing across all pages
+
+Output Expectations
+
+Generate clean, modular, and well-commented code
+
+Organize the project using best practices
+
+Ensure the website is production-ready and easy to customize
+
+The final result should be a unique, visually striking, and fully functional portfolio website that stands out and showcases creativity, technical skills, and modern web development practices.

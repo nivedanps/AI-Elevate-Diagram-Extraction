@@ -31,11 +31,15 @@ function Router() {
   );
 }
 
+import { ThemeProvider } from "@/components/ThemeProvider";
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router />
-      <Toaster />
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <Router />
+        <Toaster />
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

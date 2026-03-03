@@ -10,7 +10,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-background text-foreground">
       <Navigation />
-      
+
       <main className="flex-grow pt-16 relative z-10">
         <AnimatePresence mode="wait">
           <motion.div
@@ -26,16 +26,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </AnimatePresence>
       </main>
 
-      <footer className="border-t border-white/5 bg-black/40 backdrop-blur-sm py-8 relative z-10">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-sm text-muted-foreground font-body">
-            © 2026 DEV.OS. Crafted with neon & code.
-          </div>
-          <div className="flex gap-6">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Github size={20} /></a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin size={20} /></a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Twitter size={20} /></a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Mail size={20} /></a>
+      <footer className="py-20 relative z-10 opactiy-50">
+        <div className="container mx-auto px-4 text-center">
+          <div className="text-xs tracking-widest uppercase text-muted-foreground">
+            © 2026 NIVEDAN P S — BUILT WITH CODE
           </div>
         </div>
       </footer>

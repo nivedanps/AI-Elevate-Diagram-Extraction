@@ -1,23 +1,32 @@
 
 import { projects } from "@/lib/data";
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowUpRight, Github } from "lucide-react";
 
 export default function Projects() {
   return (
-    <div className="container mx-auto px-4 py-20">
+    <div className="container mx-auto px-4 py-32">
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
         className="max-w-6xl mx-auto"
       >
-        <h1 className="text-4xl md:text-6xl font-display font-bold mb-16 text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-500">
-          PROJECT_ARCHIVE
-        </h1>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+          <div>
+            <h2 className="text-sm font-display tracking-[0.3em] font-bold text-foreground/40 mb-4 uppercase">
+              Selected Works
+            </h2>
+            <h1 className="text-4xl md:text-6xl font-display font-black tracking-tighter uppercase">
+              Featured <br /> Projects
+            </h1>
+          </div>
+          <p className="max-w-xs text-xs text-muted-foreground uppercase tracking-widest leading-loose">
+            A collection of digital experiences built with precision and modern technology.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-12">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -25,41 +34,39 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="glass-panel group overflow-hidden"
+              className="group cursor-pointer"
             >
-              <div className="relative aspect-video overflow-hidden">
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
-                <img 
-                  src={project.image} 
+              <div className="relative aspect-[16/10] overflow-hidden bg-muted mb-6">
+                <img
+                  src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-background/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="p-4 bg-background rounded-full">
+                    <ArrowUpRight size={24} />
+                  </div>
+                </div>
               </div>
 
-              <div className="p-8 border-t border-white/5 relative bg-background/80 backdrop-blur-sm">
-                <h3 className="font-display text-2xl mb-3 text-white group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground mb-6 line-clamp-2">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="text-xs font-mono px-2 py-1 border border-white/10 text-cyan-400 bg-cyan-950/20">
-                      {tag}
-                    </span>
-                  ))}
+              <div className="flex justify-between items-start gap-4">
+                <div>
+                  <h3 className="font-display text-xl mb-2 group-hover:text-primary transition-colors uppercase font-bold tracking-tight">
+                    {project.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-x-4 gap-y-2">
+                    {project.tags.map(tag => (
+                      <span key={tag} className="text-[10px] font-display font-bold uppercase tracking-widest text-muted-foreground">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-
-                <div className="flex gap-4">
-                  <Button size="sm" className="bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-none w-full">
-                    <Github className="mr-2 w-4 h-4" /> Code
-                  </Button>
-                  <Button size="sm" className="bg-primary/80 hover:bg-primary text-white rounded-none w-full shadow-[0_0_15px_rgba(217,70,239,0.3)]">
-                    <ExternalLink className="mr-2 w-4 h-4" /> Live Demo
-                  </Button>
-                </div>
+                {project.link.includes("github") && (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-muted rounded-full transition-colors">
+                    <Github size={18} />
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

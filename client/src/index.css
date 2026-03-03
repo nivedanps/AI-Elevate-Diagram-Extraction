@@ -3,102 +3,95 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+}
+
+@theme {
   --font-display: 'Orbitron', sans-serif;
   --font-body: 'Space Grotesk', sans-serif;
 
-  --color-background: hsl(260 50% 5%); /* Deepest Purple/Black */
-  --color-foreground: hsl(280 20% 90%);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-card: hsla(var(--card) / 0.8);
+  --color-card-foreground: hsl(var(--card-foreground));
 
-  /* Neon Rave Palette */
-  --color-primary: hsl(290 100% 50%); /* Neon Purple/Pink */
-  --color-primary-foreground: hsl(290 100% 95%);
-  
-  --color-secondary: hsl(180 100% 50%); /* Cyan */
-  --color-secondary-foreground: hsl(180 100% 5%);
-
-  --color-accent: hsl(320 100% 50%); /* Hot Pink */
-  --color-accent-foreground: hsl(320 100% 95%);
-
-  --color-card: hsl(260 40% 10% / 0.7); /* Glassy Dark */
-  --color-card-foreground: hsl(280 20% 90%);
-
-  --color-border: hsl(290 50% 20%);
-  --color-input: hsl(260 40% 15%);
-  
-  --radius-lg: 0px; /* Brutalist/Tech feel */
-  --radius-md: 0px;
-  --radius-sm: 0px;
-
-  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
-    @apply font-body antialiased bg-background text-foreground overflow-x-hidden;
-    background-image: 
-      radial-gradient(circle at 50% 0%, hsl(290 100% 20% / 0.3), transparent 50%),
-      radial-gradient(circle at 0% 50%, hsl(180 100% 10% / 0.2), transparent 40%);
+    @apply font-body antialiased bg-background text-foreground transition-colors duration-300;
+    min-height: 100vh;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-widest uppercase;
-  }
-  
-  /* Selection Color */
-  ::selection {
-    @apply bg-primary text-white;
-  }
-}
 
-@keyframes glow {
-  from {
-    box-shadow: 0 0 10px -5px var(--color-primary);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight;
   }
-  to {
-    box-shadow: 0 0 20px 5px var(--color-primary);
-  }
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: hsl(260 50% 5%);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
-  border-radius: 0;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-secondary);
-}
-
-.text-stroke {
-  -webkit-text-stroke: 1px var(--color-primary);
-  color: transparent;
-}
-.text-stroke-cyan {
-  -webkit-text-stroke: 1px var(--color-secondary);
-  color: transparent;
 }
 
 .glass-panel {
-  @apply bg-card/60 backdrop-blur-md border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)];
+  @apply bg-card backdrop-blur-md border border-border shadow-sm;
 }
 
-.neon-border {
-  box-shadow: 0 0 5px var(--color-primary), inset 0 0 5px var(--color-primary);
+.bg-dot-pattern {
+  background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+  background-size: 24px 24px;
+  @apply text-foreground/5;
 }
 
-.neon-text {
-  text-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary);
-}
-
-.neon-text-cyan {
-  text-shadow: 0 0 10px var(--color-secondary), 0 0 20px var(--color-secondary);
+.text-stroke-outline {
+  -webkit-text-stroke: 1px currentColor;
+  color: transparent;
 }

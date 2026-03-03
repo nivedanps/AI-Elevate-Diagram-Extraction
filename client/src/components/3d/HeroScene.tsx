@@ -1,9 +1,10 @@
 
 import { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial } from "@react-three/drei";
+import { Points, PointMaterial, Text } from "@react-three/drei";
 // @ts-ignore
 import * as random from "maath/random/dist/maath-random.esm";
+import * as THREE from "three";
 
 function Stars(props: any) {
   const ref = useRef<any>(null);
@@ -11,8 +12,8 @@ function Stars(props: any) {
 
   useFrame((state, delta) => {
     if (ref.current) {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
+      ref.current.rotation.x -= delta / 15;
+      ref.current.rotation.y -= delta / 20;
     }
   });
 
@@ -21,21 +22,52 @@ function Stars(props: any) {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
         <PointMaterial
           transparent
-          color="#d946ef" // Tailwind fuchsia-500
-          size={0.002}
+          color="currentColor"
+          size={0.0015}
           sizeAttenuation={true}
           depthWrite={false}
+          opacity={0.4}
         />
       </Points>
     </group>
   );
 }
 
+function BackgroundText() {
+  const textRef = useRef<THREE.Group>(null);
+
+  useFrame((state) => {
+    if (textRef.current) {
+      textRef.current.position.x = Math.sin(state.clock.elapsedTime * 0.1) * 0.3;
+    }
+  });
+
+  return (
+    <group ref={textRef}>
+      <Text
+        fontSize={1.2}
+        color="currentColor"
+        font="https://fonts.gstatic.com/s/orbitron/v30/y97pyUadqAdS6Km1VvHCUshE.woff"
+        position={[0, 0, -3]}
+        transparent
+        fillOpacity={0.06}
+        strokeWidth={0.005}
+        strokeColor="currentColor"
+        strokeOpacity={0.15}
+      >
+        NIVEDAN P S
+      </Text>
+    </group>
+  );
+}
+
 export function HeroScene() {
   return (
-    <div className="absolute inset-0 z-0 bg-black">
-      <Canvas camera={{ position: [0, 0, 1] }}>
+    <div className="absolute inset-0 z-0 bg-background text-foreground transition-colors duration-500">
+      <Canvas camera={{ position: [0, 0, 1.2] }}>
+        <ambientLight intensity={0.5} />
         <Stars />
+        <BackgroundText />
       </Canvas>
     </div>
   );

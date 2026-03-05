@@ -12,11 +12,9 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com" },
-  { icon: Linkedin, href: "https://linkedin.com" },
-  { icon: Twitter, href: "https://twitter.com" },
-  { icon: Globe, href: "#" },
-  { icon: Mail, href: "mailto:contact@example.com" },
+  { icon: Github, href: "https://github.com/nivedanps" },
+  { icon: Linkedin, href: "https://linkedin.com/in/nivedanps" },
+  { icon: Mail, href: "mailto:nivedanps@outlook.com" },
 ];
 
 export default function Home() {
@@ -75,7 +73,7 @@ export default function Home() {
             className="space-y-6"
           >
             <div className="inline-block px-4 py-1.5 border border-foreground/10 rounded-full text-[10px] font-display tracking-[0.2em] font-bold uppercase mb-4">
-              Software Student & AI Enthusiast
+              SOFTWARE ENGINEERING STUDENT
             </div>
 
             <h1 className="text-6xl md:text-[10rem] font-display font-black tracking-tighter leading-[0.85] uppercase mb-8">
@@ -84,13 +82,27 @@ export default function Home() {
             </h1>
 
             <p className="max-w-xl mx-auto text-sm md:text-base text-muted-foreground uppercase tracking-[0.2em] font-medium leading-relaxed mb-12">
-              Building intelligent systems & scalable web applications. <br />
+              Building new blocks of boxes through New AI tools & coding enthusiast. <br />
               Based in Mysore, Karnataka, India.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <a href="#projects" className="group flex items-center gap-3 text-xs font-display tracking-widest font-bold uppercase transition-colors hover:text-primary">
-                Explore Work <ArrowDown size={14} className="animate-bounce" />
+              <a
+                href="#projects"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="group flex items-center gap-3 text-xs font-display tracking-widest font-bold uppercase transition-all hover:bg-primary hover:text-primary-foreground border border-foreground/10 px-8 py-4 rounded-full"
+              >
+                View My Work <ArrowDown size={14} className="group-hover:translate-y-1 transition-transform" />
+              </a>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                className="group flex items-center gap-3 text-xs font-display tracking-widest font-bold uppercase transition-all bg-foreground text-background hover:bg-foreground/90 px-8 py-4 rounded-full"
+              >
+                Download CV
               </a>
             </div>
           </motion.div>

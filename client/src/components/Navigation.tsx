@@ -21,10 +21,28 @@ export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     setMounted(true);
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      const sectionIds = ["home", "about", "education", "achievements", "skills", "projects", "contact"];
+      const scrollPos = window.scrollY + 200; // Offset to trigger early
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            setActiveSection((prev) => (prev !== id ? id : prev));
+          }
+        }
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -41,7 +59,7 @@ export function Navigation() {
   if (!mounted) return null;
 
   return (
-    <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+    <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 w-full overflow-hidden">
       <nav
         className={cn(
           "flex items-center gap-2 px-6 py-3 rounded-full border bg-background/60 backdrop-blur-xl transition-all duration-300 shadow-lg",
@@ -59,7 +77,12 @@ export function Navigation() {
               key={item.path}
               href={item.path}
               onClick={(e) => handleNavClick(e, item.path)}
-              className="text-xs uppercase tracking-widest font-medium hover:text-primary transition-colors"
+              className={cn(
+                "text-[10px] uppercase tracking-[0.2em] font-bold transition-all duration-300",
+                activeSection === item.path.substring(1)
+                  ? "text-primary border-b-2 border-primary pb-1"
+                  : "text-foreground/40 hover:text-foreground"
+              )}
             >
               {item.name}
             </a>
@@ -99,7 +122,10 @@ export function Navigation() {
                   key={item.path}
                   href={item.path}
                   onClick={(e) => handleNavClick(e, item.path)}
-                  className="text-2xl font-display font-bold uppercase tracking-widest hover:text-primary"
+                  className={cn(
+                    "text-2xl font-display font-bold uppercase tracking-widest transition-colors",
+                    activeSection === item.path.substring(1) ? "text-primary" : "hover:text-primary"
+                  )}
                 >
                   {item.name}
                 </a>

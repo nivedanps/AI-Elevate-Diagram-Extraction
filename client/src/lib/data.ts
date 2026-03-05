@@ -18,7 +18,8 @@ export const projects = [
     description: "A user-friendly UI/UX design for managing records of animals and zookeepers, including built-in portals for visitors and admins.",
     tags: ["PHP", "UI/UX", "Web Development"],
     image: "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&q=80&w=800",
-    link: "#"
+    link: "#",
+    date: "Dec 2025"
   },
   {
     id: 2,
@@ -26,14 +27,16 @@ export const projects = [
     description: "A college website that gathers feedback under one portal with secure admin access and separate portals for faculty and admins.",
     tags: ["React", "PHP", "HTML", "Web Design"],
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
-    link: "https://github.com/nivedanps/project.git"
+    link: "https://github.com/nivedanps/project.git",
+    date: "Jan 2026"
   }
 ];
 
 export const skills = [
-  { category: "Technical Skills", icon: Code2, items: ["Python", "Java", "HTML", "PHP", "Web Technology"] },
-  { category: "Tools & Environment", icon: Terminal, items: ["GitHub", "Jupyter Notebook", "Antigravity", "VSCode"] },
-  { category: "Soft Skills", icon: Layout, items: ["Team Collaboration", "Problem Solving"] }
+  { category: "Frontend", icon: Layout, items: ["HTML5", "CSS3", "JavaScript", "React.js", "Tailwind CSS"] },
+  { category: "Backend", icon: Server, items: ["Node.js", "Express", "REST APIs", "MySQL", "PHP", "MongoDB", "Python", "Java"] },
+  { category: "Tools", icon: Terminal, items: ["Git", "GitHub", "VS Code", "Jupyter Notebook"] },
+  { category: "Soft Skills", icon: Code2, items: ["Problem Solving", "Team Collaboration", "Communication"] }
 ];
 
 export const achievements = [
@@ -77,8 +80,8 @@ export const education = [
     id: 1,
     degree: "Bachelor of Engineering, Computer Science",
     school: "Maharaja Institute of Technology, Mysuru",
-    period: "2023 - Present",
-    description: "Currently pursuing pre-final year with a CGPA of 8.43. Passionate about AI and coding."
+    period: "2023 - 2027",
+    description: "Currently pursuing Bachelor of Engineering in Computer Science with a CGPA of 8.43. Passionate about AI and coding."
   },
   {
     id: 2,

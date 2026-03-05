@@ -21,7 +21,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-32">
+    <div className="container mx-auto px-4 py-20 md:py-32">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -42,7 +42,7 @@ export default function Contact() {
 
             <div className="space-y-6">
               {[
-                { icon: Mail, label: "Transmission", value: "nivedanps@outlook.in" },
+                { icon: Mail, label: "Transmission", value: "nivedanps@outlook.com" },
                 { icon: MapPin, label: "Coordinates", value: "Mysore, Karnataka" },
                 { icon: Phone, label: "Direct Line", value: "+91 6363294833" },
               ].map((item, i) => (

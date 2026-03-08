@@ -65,6 +65,7 @@ export default function Home() {
 
       {/* HERO SECTION */}
       <section id="home" className="relative h-screen flex items-center justify-center pt-20">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[400px] max-h-[400px] bg-primary/30 rounded-full blur-[80px] -z-10 animate-pulse pointer-events-none" />
         <div className="container relative z-10 px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -109,8 +110,8 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="space-y-0">
-        <section id="about" className="border-t border-border">
+      <div className="space-y-0 relative z-20 text-foreground">
+        <section id="about" className="border-t border-border bg-background">
           <About />
         </section>
 
@@ -118,7 +119,7 @@ export default function Home() {
           <Education />
         </section>
 
-        <section id="achievements" className="border-t border-border">
+        <section id="achievements" className="border-t border-border bg-background">
           <Experience />
         </section>
 
@@ -126,7 +127,7 @@ export default function Home() {
           <Skills />
         </section>
 
-        <section id="projects" className="border-t border-border">
+        <section id="projects" className="border-t border-border bg-background">
           <Projects />
         </section>
 

@@ -8,22 +8,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
 
   return (
-    <div className="min-h-screen flex flex-col relative overflow-hidden bg-background text-foreground">
+    <div className="min-h-screen flex flex-col relative overflow-x-hidden bg-background text-foreground">
       <Navigation />
 
       <main className="flex-grow pt-16 relative z-10">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={location}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="min-h-[calc(100vh-64px)]"
-          >
-            {children}
-          </motion.div>
-        </AnimatePresence>
+        <div className="min-h-[calc(100vh-64px)]">
+          {children}
+        </div>
       </main>
 
       <footer className="py-20 relative z-10 opactiy-50">

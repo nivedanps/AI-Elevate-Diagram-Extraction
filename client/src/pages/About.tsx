@@ -6,9 +6,9 @@ export default function About() {
   return (
     <div className="container mx-auto px-4 py-20 md:py-32">
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
         className="max-w-6xl mx-auto"
       >
         <div className="grid md:grid-cols-2 gap-20">

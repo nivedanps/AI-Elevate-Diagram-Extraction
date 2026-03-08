@@ -92,6 +92,6 @@
 }
 
 .text-stroke-outline {
-  -webkit-text-stroke: 1px currentColor;
+  -webkit-text-stroke: 2px hsl(var(--foreground));
   color: transparent;
 }

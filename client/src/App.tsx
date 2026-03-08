@@ -36,7 +36,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
         <Router />
         <Toaster />
       </ThemeProvider>

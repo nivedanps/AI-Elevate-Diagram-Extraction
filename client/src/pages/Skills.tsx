@@ -6,9 +6,9 @@ export default function Skills() {
   return (
     <div className="container mx-auto px-4 py-20 md:py-32">
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
         className="max-w-6xl mx-auto"
       >
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
@@ -30,9 +30,8 @@ export default function Skills() {
             <motion.div
               key={category.category}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
               className="p-8 border border-border bg-muted/20 hover:bg-muted/50 transition-colors"
             >
               <div className="flex items-center gap-4 mb-8">

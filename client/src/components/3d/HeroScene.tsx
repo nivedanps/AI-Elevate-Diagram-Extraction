@@ -22,7 +22,7 @@ function Stars(props: any) {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
         <PointMaterial
           transparent
-          color="currentColor"
+          color="#ffffff"
           size={0.0015}
           sizeAttenuation={true}
           depthWrite={false}
@@ -33,41 +33,12 @@ function Stars(props: any) {
   );
 }
 
-function BackgroundText() {
-  const textRef = useRef<THREE.Group>(null);
-
-  useFrame((state) => {
-    if (textRef.current) {
-      textRef.current.position.x = Math.sin(state.clock.elapsedTime * 0.1) * 0.3;
-    }
-  });
-
-  return (
-    <group ref={textRef}>
-      <Text
-        fontSize={1.2}
-        color="currentColor"
-        font="https://fonts.gstatic.com/s/orbitron/v30/y97pyUadqAdS6Km1VvHCUshE.woff"
-        position={[0, 0, -3]}
-        transparent
-        fillOpacity={0.06}
-        strokeWidth={0.005}
-        strokeColor="currentColor"
-        strokeOpacity={0.15}
-      >
-        NIVEDAN P S
-      </Text>
-    </group>
-  );
-}
-
 export function HeroScene() {
   return (
     <div className="absolute inset-0 z-0 bg-background text-foreground transition-colors duration-500">
       <Canvas camera={{ position: [0, 0, 1.2] }}>
         <ambientLight intensity={0.5} />
         <Stars />
-        <BackgroundText />
       </Canvas>
     </div>
   );

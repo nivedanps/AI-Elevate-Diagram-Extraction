@@ -1,87 +1,122 @@
-<div align="center">
+# Diwali Sales Data — Exploratory Data Analysis (EDA)
+
+A beginner-friendly data exploration project that analyses Diwali sales records to uncover purchasing patterns across gender, age, state, marital status, occupation, and product category.
+
+---
+
+## Project Overview
+
+This notebook performs end-to-end EDA on a Diwali Sales dataset. It cleans the raw CSV data, then uses visualisations to answer questions such as:
+
+- Which gender and age group spends the most?
+- Which states generate the highest orders and revenue?
+- How does marital status influence purchasing behaviour?
+- Which occupations and product categories drive the most sales?
+
+---
+
+## Dataset
+
+| Property | Details |
+|---|---|
+| File | `Diwali Sales Data.csv` |
+| Format | CSV (comma-separated values, unicode-escaped encoding) |
+| Key columns | `Gender`, `Age`, `Age Group`, `State`, `Marital_Status`, `Occupation`, `Product_Category`, `Product_ID`, `Orders`, `Amount` |
+
+> **Note:** Columns `Status` and `unnamed1` are dropped during cleaning as they are unrelated or blank.
+
+---
+
+## Libraries Used
+
+| Library | Purpose |
+|---|---|
+| `numpy` | Numerical operations |
+| `pandas` | Data loading, cleaning, and aggregation |
+| `matplotlib` | Base plotting |
+| `seaborn` | Statistical bar charts and count plots |
+
+---
+
+## Project Structure
 
 ```
-███╗   ██╗██╗██╗   ██╗███████╗██████╗  █████╗ ███╗   ██╗
-████╗  ██║██║██║   ██║██╔════╝██╔══██╗██╔══██╗████╗  ██║
-██╔██╗ ██║██║██║   ██║█████╗  ██║  ██║███████║██╔██╗ ██║
-██║╚██╗██║██║╚██╗ ██╔╝██╔══╝  ██║  ██║██╔══██║██║╚██╗██║
-██║ ╚████║██║ ╚████╔╝ ███████╗██████╔╝██║  ██║██║ ╚████║
-╚═╝  ╚═══╝╚═╝  ╚═══╝  ╚══════╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝
+project_on_data_explorator1.ipynb   # Main notebook
+Diwali Sales Data.csv               # Source dataset (place in /content/)
+README.md                           # This file
 ```
 
-### 🎓 Software Engineering Student · AI Enthusiast · 💻 Full-Stack Explorer
+---
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/nivedan-ps-b49513384)
-[![Email](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nivedanps1234@gmail.com)
+## Steps Performed
 
-</div>
+### 1. Data Loading
+- Import libraries
+- Read the CSV with `encoding='unicode_escape'`
+
+### 2. Data Cleaning
+- Inspect shape, head, and info
+- Drop irrelevant columns (`Status`, `unnamed1`)
+- Remove null values with `dropna()`
+- Cast `Amount` column to integer
+
+### 3. Exploratory Data Analysis
+
+#### Gender
+- Count plot of buyers by gender
+- Bar plot of total sales amount by gender
+
+#### Age & Age Group
+- Count plots for age and age group
+- Age group breakdown by gender
+- Total sales amount by age group
+
+#### State
+- Top 10 states by number of orders
+- Top 10 states by total sales amount
+
+#### Marital Status
+- Count plot of marital status
+- Sales amount by marital status, split by gender
+
+#### Occupation
+- Count plot of buyers by occupation
+- Total sales amount by occupation
+
+#### Product Category
+- Count plot by product category
+- Total sales amount by product category
+
+#### Top Products
+- Top 10 products by number of orders (by `Product_ID`)
 
 ---
 
-## 👋 About Me
+## How to Run
 
-> *"Passionate coding enthusiast on a mission to build things that matter."*
+1. Upload `Diwali Sales Data.csv` to `/content/` (Google Colab) or update the file path.
+2. Open `project_on_data_explorator1.ipynb` in Jupyter Notebook or Google Colab.
+3. Run all cells from top to bottom (`Runtime → Run all` in Colab).
 
-I'm **Nivedan P S**, a pre-final year Computer Science student . I love turning ideas into working software — from web portals to AI-powered tools
+### Requirements
 
-
-## 🛠️ Tech Stack
-
-
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white)
-
-
-![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
-
-
-
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
+```bash
+pip install numpy pandas matplotlib seaborn
+```
 
 ---
 
+## Key Insights (from analysis)
 
-
-## 📊 GitHub Stats
-
-<div align="center">
-
-![GitHub Streak](https://streak-stats.demolab.com?user=nivedanps&theme=tokyonight&hide_border=true)
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=nivedanps&theme=tokyo-night)
-</div>
-
----
-
-
+- **Female buyers** tend to purchase more and spend more than male buyers.
+- **Age group 26–35** is the most active purchasing segment.
+- **Uttar Pradesh, Maharashtra, and Karnataka** lead in both orders and revenue.
+- **Married women** show higher spending compared to other groups.
+- **IT, Healthcare, and Aviation** professionals are top spenders by occupation.
+- **Food, Clothing, and Electronics** are the highest-selling product categories.
 
 ---
 
-<div align="center">
+## Author
 
-*🌟 Open to internship & fresher opportunities in software development!*
-
-**Let's connect and build something awesome together.**
-
-[![LinkedIn](https://img.shields.io/badge/Say_Hi_on_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/nivedan-ps-b49513384)
-
-</div>
-
-<!--
-**nivedanps/nivedanps** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Student project on Data Exploration using Python and Seaborn.

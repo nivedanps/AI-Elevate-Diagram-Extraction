@@ -8,7 +8,7 @@ A beginner-friendly data exploration project that analyses Diwali sales records 
 
 This notebook performs end-to-end EDA on a Diwali Sales dataset. It cleans the raw CSV data, then uses visualisations to answer questions such as:
 
-- Which gender and age group spends the most?
+- Which gender and age group spends the most?k
 - Which states generate the highest orders and revenue?
 - How does marital status influence purchasing behaviour?
 - Which occupations and product categories drive the most sales?

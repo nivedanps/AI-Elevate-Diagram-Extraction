@@ -1,88 +1,193 @@
-the fileApollo.io
+%-------------------------
+% Resume in Latex
+% Based off of: https://github.com/sb2nov/resume (Jake Gutierrez template)
+%------------------------
 
+\documentclass[letterpaper,11pt]{article}
 
- eda for readme for github
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
 
-Here’s a clean and professional EDA (Exploratory Data Analysis) section for your GitHub README 👇 — you can directly copy-paste it.
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-📊 Exploratory Data Analysis (EDA)
-Exploratory Data Analysis (EDA) is a crucial step in understanding the dataset before building any machine learning model. It helps uncover patterns, detect anomalies, test assumptions, and check relationships between variables.
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
 
-🔍 Objectives of EDA
-Understand the structure of the dataset
+\urlstyle{same}
 
-Handle missing values and duplicates
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
 
-Identify outliers
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-Analyze feature distributions
+% Ensure that generated pdf is machine readable/ATS parsable
+\pdfgentounicode=1
 
-Discover relationships between variables
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
 
-📁 Dataset Overview
-Total Rows: XXXXX
+\newcommand{\resumeCompactItem}[1]{
+  \item[] \small #1
+}
 
-Total Columns: XXXXX
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
 
-Numerical Features: XX
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
 
-Categorical Features: XX
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
-🧹 Data Cleaning
-Removed duplicate records
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-Handled missing values using:
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-Mean/Median for numerical data
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Mode for categorical data
+\begin{document}
 
-Converted data types where necessary
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Nivedan P S} \\ \vspace{4pt}
+    \small \Mobilefone\ +91 9740130224 ~ $|$ ~
+    \Letter\ \href{mailto:nivedanps1234@gmail.com}{nivedanps1234@gmail.com} ~ $|$ ~
+    \href{https://linkedin.com/in/nivedanps}{linkedin} ~ $|$ ~
+    \href{https://nivedanpsportfolio.vercel.app/}{portfolio} ~ $|$ ~
+    \href{https://github.com/nivedanps}{github}
+    \vspace{-8pt}
+\end{center}
 
-📈 Univariate Analysis
-Distribution plots (Histogram, KDE)
+%-----------SUMMARY-----------
+\section{Summary}
+  \resumeSubHeadingListStart
+    \resumeItem{Final-year Computer Science undergraduate with hands-on project experience in AI-driven and web-based applications. Strong foundation in Python, Java, and database systems, with a growing interest in generative AI tools and cloud technologies. Quick learner, collaborative team member, and enthusiastic open-source contributor.}
+  \resumeSubHeadingListEnd
+\vspace{-13pt}
 
-Count plots for categorical variables
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Maharaja Institute of Technology, Mysuru}{2023 -- 2027}
+      {Bachelor of Engineering, Computer Science -- CGPA: 8.73}{Mysuru, India}
+    \resumeSubheading
+      {Sadvidya Semi-Residential College, Mysuru}{2022 -- 2023}
+      {Pre-University (PCMC) -- 84.16\%}{Mysuru, India}
+    \resumeSubheading
+      {Bharatiya Vidya Bhavan, Mysuru}{2020 -- 2021}
+      {High School (SSLC) -- 91.20\%}{Mysuru, India}
+  \resumeSubHeadingListEnd
+\vspace{-13pt}
 
-Summary statistics (mean, median, std deviation)
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/nivedanps/voxsynth}{Voxsynth}} $|$ \emph{Python, AI Agents, Text-to-Speech}}{Feb 2026}
+          \resumeItemListStart
+            \resumeItem{Built an autonomous multiplayer agent system that translates text to audio in real time across multiple languages simultaneously.}
+            \resumeItem{Designed the agent pipeline to coordinate translation and speech synthesis with minimal latency for a seamless multiplayer experience.}
+          \resumeItemListEnd
+          \vspace{-13pt}
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/nivedanps/Smart-feedback-faculty-portal}{Smart Faculty Feedback Portal}} $|$ \emph{ JavaScript, Web Development, Data Visualization}}{Jan 2026}
+          \resumeItemListStart
+            \resumeItem{Designed a web application to simplify collection and reporting of faculty feedback for academic institutions.}
+            \resumeItem{Enhanced decision-making for administrators through organized data visualization and analytics dashboards.}
+          \resumeItemListEnd
+          \vspace{-13pt}
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/nivedanps/zoomanager}{ZOO Database Management System}} $|$ \emph{ JavaScript, MySQL, Database Design}}{Dec 2025}
+          \resumeItemListStart
+            \resumeItem{Developed a database-driven system that simplifies animal records, feeding schedules, and staff management for a zoo.}
+            \resumeItem{Structured the database schema to streamline wildlife care administration and enable smarter, tech-driven operations.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+\vspace{-15pt}
 
-🔗 Bivariate Analysis
-Correlation heatmap to identify relationships
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: Python, C, Java} \\
+     \textbf{Technologies/Environment}{: MySQL, Git \& GitHub, Jupyter Notebook, VS Code, Antigravity, Web Hosting} \\
+     \textbf{Soft Skills}{: Mentoring, Problem Solving, Team Collaboration} \\
+    }}
+ \end{itemize}
+ \vspace{-16pt}
 
-Scatter plots for numerical features
+%-----------CERTIFICATIONS \& COURSES-----------
+\section{Certifications \& Courses}
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=-2pt]
+    \resumeCompactItem{\textbf{Introduction to Generative AI} -- 2026}
+    \resumeCompactItem{\textbf{Artificial Intelligence Fundamentals} -- 2025}
+    \resumeCompactItem{\textbf{AWS Cloud Practitioner Essentials} -- 2026}
+    \resumeCompactItem{\textbf{Programming with JavaScript} -- 2026}
+    \resumeCompactItem{\textbf{Certified in Java Language} -- Acube Tech Skills, Mysuru, India}
+  \end{itemize}
+\vspace{-10pt}
 
-Box plots to detect outliers
+%-----------ACHIEVEMENTS \& INVOLVEMENT-----------
+\section{Hackathons \& Achievements}
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=-2pt]
+    \resumeCompactItem{\textbf{Innovostava 2026} -- Runner-up}
+    \resumeCompactItem{\textbf{Hackverse 2025} -- Participant}
+    \resumeCompactItem{\textbf{ARGHYA -- Empowering Engineers with Next-Gen AI Tools} -- Participant}
+    \resumeCompactItem{\textbf{Be10x AI Tools Workshop} -- Attendee}
+  \end{itemize}
+\vspace{-10pt}
 
-🔥 Key Insights
-Feature X shows strong correlation with target variable
+%-----------LANGUAGES \& INTERESTS-----------
+\section{Languages \& Interests}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: English (Professional), Kannada (Native), Hindi (Limited Working)} \\
+     \textbf{Interests}{: Cricket, Kabaddi, Open Source Contribution} \\
+    }}
+ \end{itemize}
 
-Feature Y contains significant outliers
-
-Category Z dominates the dataset
-
-Missing values were mainly found in Column A
-
-📊 Visualization Tools Used
-Matplotlib
-
-Seaborn
-
-Pandas
-
-📌 Conclusion
-EDA helped in gaining meaningful insights from the dataset and guided feature selection and preprocessing steps, ultimately improving model performance.
-
-✅ If you want, I can:
-
-Customize this for your specific project (like gold prediction / CNN / dataset)
-
-Add graphs screenshots placeholders
-
-Or make a full GitHub README template (complete project)
-
-
-
-extra-button
-export-button
-save-button
-Response complete
+\end{document}
